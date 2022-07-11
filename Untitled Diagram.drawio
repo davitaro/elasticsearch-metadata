@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-07-11T09:41:04.276Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="RHM8hqtoATacubpCOIy2" version="20.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-07-11T09:43:20.141Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="PEA1I9yCTY2IEdihrdyZ" version="20.0.4" type="github">
   <diagram id="ex8GoTdpVqOecJ1n9Sfv" name="Page-1">
     <mxGraphModel dx="1085" dy="563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -72,6 +72,9 @@
         </mxCell>
         <mxCell id="1iQS_7LXY5DfjF9ILKeW-31" value="&lt;b&gt;Sales&lt;/b&gt;:&lt;br&gt;&lt;br&gt;lowest sale" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1iQS_7LXY5DfjF9ILKeW-25">
           <mxGeometry x="290" y="30" width="140" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="1iQS_7LXY5DfjF9ILKeW-32" value="1) NestJS Structure&lt;br&gt;&lt;br&gt;2) Module - Products, Employees, Sales&lt;br&gt;&lt;br&gt;3) Services and Controllers and Repositories&lt;br&gt;for Products Employees Sales&lt;br&gt;&lt;br&gt;4) Connect to Mongo&lt;br&gt;&lt;br&gt;3) Module Employee Metadata - controller, services&lt;br&gt;4) Module Products Metadata - controller, services, rep&lt;br&gt;5) Module Sales Metadata - controller, services, repo" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="960" width="310" height="190" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
