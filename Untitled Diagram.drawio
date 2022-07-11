@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2022-07-11T09:28:11.925Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="fvc56JbWLTZRK5yhG4xH" version="20.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-07-11T09:31:42.973Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="6BpNBxA3jzA0iJY2ZgVQ" version="20.0.4" type="github">
   <diagram id="ex8GoTdpVqOecJ1n9Sfv" name="Page-1">
-    <mxGraphModel dx="868" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1578" dy="818" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="1iQS_7LXY5DfjF9ILKeW-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=344.99999999999994;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="1iQS_7LXY5DfjF9ILKeW-1" target="1iQS_7LXY5DfjF9ILKeW-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="1iQS_7LXY5DfjF9ILKeW-1" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
           <mxGeometry x="50" y="50" width="240" height="470" as="geometry" />
         </mxCell>
@@ -25,6 +28,9 @@
         <mxCell id="1iQS_7LXY5DfjF9ILKeW-5" value="collection: &lt;b&gt;Sales&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
           <mxGeometry x="60" y="230" width="220" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="1iQS_7LXY5DfjF9ILKeW-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="1iQS_7LXY5DfjF9ILKeW-6" target="1iQS_7LXY5DfjF9ILKeW-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="1iQS_7LXY5DfjF9ILKeW-6" value="collection: Sales&amp;nbsp;&lt;b&gt;Metadata&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="60" y="440" width="220" height="60" as="geometry" />
         </mxCell>
@@ -34,23 +40,29 @@
         <mxCell id="1iQS_7LXY5DfjF9ILKeW-11" value="Product { id:&amp;nbsp;&lt;br&gt;name:&amp;nbsp;&lt;br&gt;category:&lt;br&gt;price:&lt;br&gt;stock:&amp;nbsp; }" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
           <mxGeometry x="330" y="120" width="270" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="1iQS_7LXY5DfjF9ILKeW-12" value="Sale { id:&amp;nbsp;&lt;br&gt;date:&amp;nbsp;&lt;br&gt;items: [{item_name: item_price: item_quantity}]&lt;br&gt;total:&lt;br&gt;payment method:&amp;nbsp; }" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="330" y="210" width="270" height="80" as="geometry" />
+        <mxCell id="1iQS_7LXY5DfjF9ILKeW-12" value="Sale { id:&amp;nbsp;&lt;br&gt;date:&amp;nbsp;&lt;br&gt;items: [{item_name: item_price: item_quantity}]&lt;br&gt;total:&lt;br&gt;salesperson:&amp;nbsp;&lt;br&gt;payment method:&amp;nbsp; }" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="330" y="210" width="270" height="100" as="geometry" />
         </mxCell>
         <mxCell id="1iQS_7LXY5DfjF9ILKeW-17" value="collection: Products&amp;nbsp;&lt;b&gt;Metadata&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="60" y="370" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1iQS_7LXY5DfjF9ILKeW-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="1iQS_7LXY5DfjF9ILKeW-18" target="1iQS_7LXY5DfjF9ILKeW-19">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1iQS_7LXY5DfjF9ILKeW-18" value="collection: Employees&amp;nbsp;&lt;b&gt;Metadata&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="60" y="300" width="220" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1iQS_7LXY5DfjF9ILKeW-19" value="Employee Metadata { id:&amp;nbsp;&lt;br&gt;createdAt:&amp;nbsp;&lt;br&gt;number of employees in each department, total number of employees:&lt;br&gt;different roles: &lt;br&gt;number of departments:&amp;nbsp; }" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="330" y="300" width="420" height="80" as="geometry" />
+          <mxGeometry x="370" y="330" width="420" height="80" as="geometry" />
         </mxCell>
         <mxCell id="1iQS_7LXY5DfjF9ILKeW-20" value="Products Metadata { id:&amp;nbsp;&lt;br&gt;createdAt:&amp;nbsp;&lt;br&gt;number of products in each department, total number of products:&lt;br&gt;different categories: &lt;br&gt;highest priced product, lowest priced product, stock below 10,&amp;nbsp; &amp;nbsp;}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="330" y="390" width="420" height="80" as="geometry" />
+          <mxGeometry x="370" y="440" width="420" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="1iQS_7LXY5DfjF9ILKeW-21" value="Sales Metadata { id:&amp;nbsp;&lt;br&gt;createdAt:&amp;nbsp;&lt;br&gt;number of sales:&lt;br&gt;highest sale, lowest sale, payment method counts:&amp;nbsp; &amp;nbsp;}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="330" y="480" width="420" height="80" as="geometry" />
+        <mxCell id="1iQS_7LXY5DfjF9ILKeW-21" value="Sales Metadata { id:&amp;nbsp;&lt;br&gt;createdAt:&amp;nbsp;&lt;br&gt;highest Sales, lowest Sales&lt;br&gt;number of sales:&lt;br&gt;highest sale, lowest sale, payment method counts:&amp;nbsp; &amp;nbsp;}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="370" y="550" width="420" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1iQS_7LXY5DfjF9ILKeW-25" value="ElasticSearch: s" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="250" y="670" width="430" height="200" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
