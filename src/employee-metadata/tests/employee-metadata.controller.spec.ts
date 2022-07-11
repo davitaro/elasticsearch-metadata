@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { EmployeeMetadataController } from './employee-metadata.controller';
+import { EmployeeMetadataController } from '../employee-metadata.controller';
 
 describe('EmployeeMetadataController', () => {
   let controller: EmployeeMetadataController;

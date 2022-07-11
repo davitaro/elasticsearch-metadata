@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { EmployeeMetadataService } from './employee-metadata.service';
+import { EmployeeMetadataService } from '../employee-metadata.service';
 
 describe('EmployeeMetadataService', () => {
   let service: EmployeeMetadataService;

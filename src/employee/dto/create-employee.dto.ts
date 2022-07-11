@@ -4,4 +4,5 @@ export class CreateEmployeeDto {
     title: string;
     department: string;
     hiredDate: string;
+    salary: number;
 }

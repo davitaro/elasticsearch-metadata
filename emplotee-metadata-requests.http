@@ -1,6 +1,6 @@
 ### list all employees 
 
-GET http://localhost:3000/employee
+GET http://localhost:3000/employee/metadata
 
 
 #### create new employee
