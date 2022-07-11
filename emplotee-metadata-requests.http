@@ -8,10 +8,10 @@ POST http://localhost:3000/employee
 Content-Type: application/json
 
 { 
-    "firstName": "Marguerite",
-    "lastName": "Elysees",
-    "title": "Manager",
-    "department": "Sales",
-    "hiredDate": "2015-10-27T00:00:00.000Z",
-    "salary": 55000
+    "firstName": "Barry",
+    "lastName": "Moss",
+    "title": "Janitor",
+    "department": "Maintenance",
+    "hiredDate": "2011-08-27T00:00:00.000Z",
+    "salary": 20000
 }

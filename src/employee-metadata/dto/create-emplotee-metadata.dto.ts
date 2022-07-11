@@ -1,5 +1,5 @@
 export class CreateEmployeeMetadataDto {
-  total_number_of_employees: number;
+  total_number_employees: number;
   most_recent_hire: string;
   department_with_lowest_number_employees: string;
   department_with_highest_number_employees: string;

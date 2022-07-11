@@ -23,4 +23,20 @@ export class EmployeeService {
     logger.log(`You are searching for all employees`);
     return this.employeeModel.find().exec();
   }
+
+  async findTotal() {
+    const allEmployees = await this.findAll();
+    return allEmployees.length;
+  }
+
+  async findMostRecentHire(): Promise<string> {
+    const sortedEmployees = await this.employeeModel
+      .find()
+      .sort({ hiredDate: -1 })
+      .limit(1)
+      .exec();
+
+    const hiree = `${sortedEmployees[0].lastName}, ${sortedEmployees[0].firstName}`;
+    return hiree;
+  }
 }

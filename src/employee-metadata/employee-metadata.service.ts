@@ -1,4 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
+import { EmployeeService } from 'src/employee/employee.service';
 import { EmployeeMetadataRepository } from './employee-metadata.repository';
 import { EmployeeMetadata } from './schemas/employee-metadata.schema';
 
@@ -6,18 +7,19 @@ const logger = new Logger('Employee Metadata Service', { timestamp: true });
 
 @Injectable()
 export class EmployeeMetadataService {
-  constructor(public employeeMetadataRepository: EmployeeMetadataRepository) {}
+  constructor(
+    public employeeMetadataRepository: EmployeeMetadataRepository,
+    public employeeService: EmployeeService,
+  ) {}
 
   async create(): Promise<EmployeeMetadata> {
     logger.log(`A new employee metadata object is being created`);
-    const totalEmployees =
-      await this.employeeMetadataRepository.findTotalEmployees();
-    // const mostRecentHire =
-    //   await this.employeeMetadataRepository.findMostRecentHire();
-    // const departmentWithHighest =
-    //   await this.employeeMetadataRepository.findDepartmentWithHighestEmployees();
-    const departmentWithLowest =
-      await this.employeeMetadataRepository.findDepartmentWithLowestEmployees();
+    const totalEmployees = await this.employeeService.findTotal();
+    const mostRecentHire = await this.employeeService.findMostRecentHire();
+    // // const departmentWithHighest =
+    // //   await this.employeeMetadataRepository.findDepartmentWithHighestEmployees();
+    // const departmentWithLowest =
+    //   await this.employeeMetadataRepository.findDepartmentWithLowestEmployees();
     // const lowestSalary =
     //   await this.employeeMetadataRepository.findLowestSalary();
     // const highestSalary =
@@ -26,9 +28,9 @@ export class EmployeeMetadataService {
     //   await this.employeeMetadataRepository.findAverageSalary();
 
     const metadataObj = {
-      total_number_of_employees: totalEmployees,
-      department_with_lowest_number_employees: departmentWithLowest,
-      most_recent_hire: 'John Stewart',
+      total_number_employees: totalEmployees,
+      department_with_lowest_number_employees: 'Managerial',
+      most_recent_hire: mostRecentHire,
       department_with_highest_number_employees: 'Sales',
       highest_salary: 150000,
       lowest_salary: 34000,
