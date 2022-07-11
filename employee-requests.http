@@ -1,0 +1,16 @@
+### list all employees 
+
+GET http://localhost:3000/employee
+
+
+#### create new employee
+POST http://localhost:3000/employee
+Content-Type: application/json
+
+{ 
+    "firstName": "Robert",
+    "lastName": "Johnson",
+    "title": "Salesperson",
+    "department": "Sales",
+    "hiredDate": "2015-10-27T00:00:00.000Z"
+}
