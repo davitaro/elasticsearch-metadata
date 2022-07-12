@@ -8,9 +8,8 @@ POST http://localhost:3000/employee/metadata
 Content-Type: application/json
 
 { 
-    "text": "Muffin"
+    "text": 1
 }
-
 
 #### create new employee
 POST http://localhost:3000/employee

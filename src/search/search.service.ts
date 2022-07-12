@@ -33,9 +33,10 @@ export class SearchService {
     const body =
       await this.elasticsearchService.search<EmployeeMetadataSearchResult>({
         index: this.index,
+
         query: {
-          multi_match: {
-            query: text,
+          query_string: {
+            query: `*${text}*`,
             fields: [
               //   'total_number_employees',
               //   'most_recent_hire',
