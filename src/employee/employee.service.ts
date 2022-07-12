@@ -4,39 +4,48 @@ import { Model } from 'mongoose';
 import { CreateEmployeeDto } from './dto/create-employee.dto';
 import { Employee, EmployeeDocument } from './schemas/employee.schema';
 import { Logger } from '@nestjs/common';
+import { EmployeeRepository } from './employee.repository';
 
 const logger = new Logger('Employee Service', { timestamp: true });
 
 @Injectable()
 export class EmployeeService {
-  constructor(
-    @InjectModel(Employee.name) private employeeModel: Model<EmployeeDocument>,
-  ) {}
+  constructor(public employeeRepository: EmployeeRepository) {}
 
   async create(createEmployeeDto: CreateEmployeeDto): Promise<Employee> {
-    const createdEmployee = new this.employeeModel(createEmployeeDto);
     logger.log(`A new employee is being created`);
-    return createdEmployee.save();
+    return this.employeeRepository.create(createEmployeeDto);
   }
 
   async findAll(): Promise<Employee[]> {
-    logger.log(`You are searching for all employees`);
-    return this.employeeModel.find().exec();
+    return this.employeeRepository.findAll();
   }
 
-  async findTotal() {
-    const allEmployees = await this.findAll();
-    return allEmployees.length;
+  async findTotal(): Promise<number> {
+    return this.employeeRepository.findTotal();
   }
 
   async findMostRecentHire(): Promise<string> {
-    const sortedEmployees = await this.employeeModel
-      .find()
-      .sort({ hiredDate: -1 })
-      .limit(1)
-      .exec();
+    return this.employeeRepository.findMostRecentHire();
+  }
 
-    const hiree = `${sortedEmployees[0].lastName}, ${sortedEmployees[0].firstName}`;
-    return hiree;
+  async findDepartmentWithHighestEmployees(): Promise<string> {
+    return this.employeeRepository.findDepartmentWithHighestEmployees();
+  }
+
+  async findDepartmentWithLowestEmployees(): Promise<string> {
+    return this.employeeRepository.findDepartmentWithLowestEmployees();
+  }
+
+  async findLowestSalary(): Promise<number> {
+    return this.employeeRepository.findLowestSalary();
+  }
+
+  async findHighestSalary(): Promise<number> {
+    return this.employeeRepository.findHighestSalary();
+  }
+
+  async findAverageSalary(): Promise<number> {
+    return this.employeeRepository.findAverageSalary();
   }
 }

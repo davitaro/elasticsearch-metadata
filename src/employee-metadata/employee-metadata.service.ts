@@ -16,25 +16,22 @@ export class EmployeeMetadataService {
     logger.log(`A new employee metadata object is being created`);
     const totalEmployees = await this.employeeService.findTotal();
     const mostRecentHire = await this.employeeService.findMostRecentHire();
-    // // const departmentWithHighest =
-    // //   await this.employeeMetadataRepository.findDepartmentWithHighestEmployees();
-    // const departmentWithLowest =
-    //   await this.employeeMetadataRepository.findDepartmentWithLowestEmployees();
-    // const lowestSalary =
-    //   await this.employeeMetadataRepository.findLowestSalary();
-    // const highestSalary =
-    //   await this.employeeMetadataRepository.findHighestSalary();
-    // const averageSalary =
-    //   await this.employeeMetadataRepository.findAverageSalary();
+    const departmentWithHighest =
+      await this.employeeService.findDepartmentWithHighestEmployees();
+    const departmentWithLowest =
+      await this.employeeService.findDepartmentWithLowestEmployees();
+    const lowestSalary = await this.employeeService.findLowestSalary();
+    const highestSalary = await this.employeeService.findHighestSalary();
+    const averageSalary = await this.employeeService.findAverageSalary();
 
     const metadataObj = {
       total_number_employees: totalEmployees,
-      department_with_lowest_number_employees: 'Managerial',
       most_recent_hire: mostRecentHire,
-      department_with_highest_number_employees: 'Sales',
-      highest_salary: 150000,
-      lowest_salary: 34000,
-      average_salary: 75000,
+      department_with_lowest_number_employees: departmentWithLowest,
+      department_with_highest_number_employees: departmentWithHighest,
+      highest_salary: highestSalary,
+      lowest_salary: lowestSalary,
+      average_salary: averageSalary,
     };
 
     return this.employeeMetadataRepository.createObject(metadataObj);

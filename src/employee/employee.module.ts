@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { EmployeeController } from './employee.controller';
+import { EmployeeRepository } from './employee.repository';
 import { EmployeeService } from './employee.service';
 import { Employee, EmployeeSchema } from './schemas/employee.schema';
 
@@ -11,7 +12,7 @@ import { Employee, EmployeeSchema } from './schemas/employee.schema';
     ]),
   ],
   controllers: [EmployeeController],
-  providers: [EmployeeService],
+  providers: [EmployeeService, EmployeeRepository],
   exports: [EmployeeService],
 })
 export class EmployeeModule {}
