@@ -4,6 +4,7 @@ import { EmployeeMetadataSearchResult } from 'src/search/interfaces/employee-met
 import { SearchService } from 'src/search/search.service';
 import { EmployeeMetadataRepository } from './employee-metadata.repository';
 import { EmployeeMetadata } from './schemas/employee-metadata.schema';
+import { v4 as uuid } from 'uuid';
 
 const logger = new Logger('Employee Metadata Service', { timestamp: true });
 
@@ -37,9 +38,18 @@ export class EmployeeMetadataService {
       average_salary: averageSalary,
     };
 
+    const id = uuid();
+    const created_date = Date();
+
+    const toBeIndexed = {
+      ...metadataObj,
+      id,
+      created_date,
+    };
+
     const indexed =
       await this.employeeMetadataSearchService.indexEmployeeMetadata(
-        metadataObj,
+        toBeIndexed,
       );
     console.log('indexed', indexed);
 

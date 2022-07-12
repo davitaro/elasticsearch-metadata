@@ -24,6 +24,7 @@ export class SearchService {
         lowest_salary: employeeMetadata.lowest_salary,
         average_salary: employeeMetadata.average_salary,
         most_recent_hire: employeeMetadata.most_recent_hire,
+        created_date: employeeMetadata.created_date,
       },
     });
   }

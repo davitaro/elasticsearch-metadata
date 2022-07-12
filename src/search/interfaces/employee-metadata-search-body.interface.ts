@@ -6,5 +6,5 @@ export interface EmployeeMetadataSearchBody {
   highest_salary: number;
   lowest_salary: number;
   average_salary: number;
-
+  created_date: string;
 }

@@ -1,4 +1,4 @@
-### list all employees 
+### list all employee metadata
 
 GET http://localhost:3000/employee/metadata
 
@@ -8,7 +8,7 @@ POST http://localhost:3000/employee/metadata
 Content-Type: application/json
 
 { 
-    "text": "low"
+    "text": "Muffin"
 }
 
 
@@ -17,10 +17,10 @@ POST http://localhost:3000/employee
 Content-Type: application/json
 
 { 
-    "firstName": "Escobar",
-    "lastName": "Marlin",
-    "title": "Salesperson",
-    "department": "Sales",
-    "hiredDate": "2010-08-27T00:00:00.000Z",
-    "salary": 53000
+    "firstName": "Muffin",
+    "lastName": "Charles",
+    "title": "Programmer",
+    "department": "IT",
+    "hiredDate": "2008-08-27T00:00:00.000Z",
+    "salary": 70000
 }

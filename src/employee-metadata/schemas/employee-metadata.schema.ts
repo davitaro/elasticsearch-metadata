@@ -25,6 +25,8 @@ export class EmployeeMetadata {
 
   @Prop({ required: true })
   average_salary: number;
+
+  created_date: string;
 }
 
 export const EmployeeMetadataSchema =
