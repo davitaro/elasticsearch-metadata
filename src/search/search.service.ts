@@ -6,7 +6,7 @@ import { EmployeeMetadataSearchResult } from './interfaces/employee-metadata-sea
 
 @Injectable()
 export class SearchService {
-  index = 'employees';
+  index = 'metadata';
   constructor(private readonly elasticsearchService: ElasticsearchService) {}
 
   async indexEmployeeMetadata(employeeMetadata: EmployeeMetadata) {
