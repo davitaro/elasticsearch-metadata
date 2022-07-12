@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { EmployeeMetadataService } from './employee-metadata.service';
 
 @Controller('employee/metadata')
@@ -7,7 +7,11 @@ export class EmployeeMetadataController {
 
   @Get()
   async listCurrent() {
-    console.log("im listing the current stuff")
     return this.employeeMetadataService.create();
+  }
+
+  @Post()
+  async search(@Body('text') text: string) {
+    return this.employeeMetadataService.search(text);
   }
 }

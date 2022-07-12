@@ -10,7 +10,7 @@ export class SearchService {
   constructor(private readonly elasticsearchService: ElasticsearchService) {}
 
   async indexEmployeeMetadata(employeeMetadata: EmployeeMetadata) {
-    console.log("info", await this.elasticsearchService.info())
+    console.log('info', await this.elasticsearchService.info());
 
     return await this.elasticsearchService.index<EmployeeMetadataSearchBody>({
       index: this.index,
@@ -36,18 +36,19 @@ export class SearchService {
           multi_match: {
             query: text,
             fields: [
-              'total_number_employees',
-              'most_recent_hire',
-              'department_with_lowest_number_employees',
-              'department_with_highest_number_employees',
-              'highest_salary',
-              'lowest_salary',
-              'average_salary',
+              //   'total_number_employees',
+              //   'most_recent_hire',
+              //   'department_with_lowest_number_employees',
+              //   'department_with_highest_number_employees',
+              //   'highest_salary',
+              //   'lowest_salary',
+              //   'average_salary',
             ],
           },
         },
       });
     const hits = body.hits.hits;
+    console.log('body', body);
     console.log('hits', hits);
     return hits.map((item) => item._source);
   }

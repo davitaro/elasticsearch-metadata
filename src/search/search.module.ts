@@ -1,18 +1,25 @@
 import { Module } from '@nestjs/common';
 import { ElasticsearchModule } from '@nestjs/elasticsearch';
+import { ConfigModule } from 'src/config/config.module';
+import { ConfigService } from 'src/config/config.service';
 import { SearchService } from './search.service';
 
 @Module({
   imports: [
-    ElasticsearchModule.register({
-      cloud: {
-        id: 'MongoMigrationSearch:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvOjQ0MyQ2NDcyYzAxYzRhZGM0NzQxOTliODJiNjI0ZDg3MzYwYyRiMjZkOGQ0MTAxOTQ0MDRlOWUwNjk5YmI4NDE2YWZjZg==',
-      },
-      auth: {
-        username: 'elastic',
-        password: '4LfB25pTsJ6XCXgg40FsGcLi',
-      },
+    ElasticsearchModule.registerAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        cloud: {
+          id: configService.get('ELASTICSEARCH_CLOUD_ID'),
+        },
+        auth: {
+          username: configService.get('ELASTICSEARCH_USERNAME'),
+          password: configService.get('ELASTICSEARCH_PASSWORD'),
+        },
+      }),
+      inject: [ConfigService],
     }),
+    ConfigModule,
   ],
   exports: [ElasticsearchModule, SearchService],
   providers: [SearchService],

@@ -1,5 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { EmployeeService } from 'src/employee/employee.service';
+import { EmployeeMetadataSearchResult } from 'src/search/interfaces/employee-metadata-search-result.interface';
 import { SearchService } from 'src/search/search.service';
 import { EmployeeMetadataRepository } from './employee-metadata.repository';
 import { EmployeeMetadata } from './schemas/employee-metadata.schema';
@@ -36,8 +37,17 @@ export class EmployeeMetadataService {
       average_salary: averageSalary,
     };
 
-    await this.employeeMetadataSearchService.indexEmployeeMetadata(metadataObj);
+    const indexed =
+      await this.employeeMetadataSearchService.indexEmployeeMetadata(
+        metadataObj,
+      );
+    console.log('indexed', indexed);
 
     return this.employeeMetadataRepository.createObject(metadataObj);
+  }
+
+  async search(text: string): Promise<EmployeeMetadataSearchResult[]> {
+    const results = await this.employeeMetadataSearchService.search(text);
+    return results;
   }
 }

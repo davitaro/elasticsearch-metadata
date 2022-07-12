@@ -3,15 +3,24 @@
 GET http://localhost:3000/employee/metadata
 
 
+#### metadata search
+POST http://localhost:3000/employee/metadata
+Content-Type: application/json
+
+{ 
+    "text": "low"
+}
+
+
 #### create new employee
 POST http://localhost:3000/employee
 Content-Type: application/json
 
 { 
-    "firstName": "Barry",
-    "lastName": "Moss",
-    "title": "Janitor",
-    "department": "Maintenance",
-    "hiredDate": "2011-08-27T00:00:00.000Z",
-    "salary": 20000
+    "firstName": "Escobar",
+    "lastName": "Marlin",
+    "title": "Salesperson",
+    "department": "Sales",
+    "hiredDate": "2010-08-27T00:00:00.000Z",
+    "salary": 53000
 }
