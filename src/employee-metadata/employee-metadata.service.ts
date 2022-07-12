@@ -1,5 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { EmployeeService } from 'src/employee/employee.service';
+import { SearchService } from 'src/search/search.service';
 import { EmployeeMetadataRepository } from './employee-metadata.repository';
 import { EmployeeMetadata } from './schemas/employee-metadata.schema';
 
@@ -10,6 +11,7 @@ export class EmployeeMetadataService {
   constructor(
     public employeeMetadataRepository: EmployeeMetadataRepository,
     public employeeService: EmployeeService,
+    private employeeMetadataSearchService: SearchService,
   ) {}
 
   async create(): Promise<EmployeeMetadata> {
@@ -33,6 +35,8 @@ export class EmployeeMetadataService {
       lowest_salary: lowestSalary,
       average_salary: averageSalary,
     };
+
+    await this.employeeMetadataSearchService.indexEmployeeMetadata(metadataObj);
 
     return this.employeeMetadataRepository.createObject(metadataObj);
   }
