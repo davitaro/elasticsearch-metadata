@@ -2,12 +2,12 @@ POST http://localhost:3000/product/create
 Content-Type: application/json
 
 {
-    "name": "twin mattress",
+    "name": "king mattress",
     "department": "furniture",
     "category": "bedroom",
     "brand": "PosturePedic",
     "last_shipment_date": "2022-07-13T09:22:37.926Z",
     "quantity_in_stock": 100,
-    "price": 250, 
+    "price": 550, 
     "isAvailable": true
 }

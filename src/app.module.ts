@@ -8,6 +8,7 @@ import { ProductModule } from './product/product.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Product } from './product/product.entity';
 import { ConfigService } from './config/config.service';
+import { MetadataModule } from './metadata/metadata.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { ConfigService } from './config/config.service';
       }),
       inject: [ConfigService],
     }),
+    MetadataModule,
   ],
 })
 export class AppModule {}
