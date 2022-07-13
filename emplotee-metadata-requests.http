@@ -8,7 +8,7 @@ POST http://localhost:3000/employee/metadata
 Content-Type: application/json
 
 { 
-    "text": "to"
+    "text": "IT"
 }
 
 #### create new employee

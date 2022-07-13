@@ -37,15 +37,7 @@ export class SearchService {
         query: {
           query_string: {
             query: `*${text}*`,
-            fields: [
-              //   'total_number_employees',
-              //   'most_recent_hire',
-              //   'department_with_lowest_number_employees',
-              //   'department_with_highest_number_employees',
-              //   'highest_salary',
-              //   'lowest_salary',
-              //   'average_salary',
-            ],
+            fields: [],
           },
         },
       });

@@ -7,7 +7,6 @@ export class ConfigService {
   private readonly envConfig: { [key: string]: string };
 
   constructor(filePath: string) {
-    console.log('file path', filePath)
     this.envConfig = dotenv.parse(fs.readFileSync(filePath));
   }
 
