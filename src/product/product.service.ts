@@ -28,11 +28,5 @@ export class ProductService {
     await product.destroy();
   }
 
-  // async findNumberOfTables(): Promise<number> {
-  //   const columnMetadata = await this.productsRepository.query(
-  //     ' SELECT * FROM "information_schema"."columns"',
-  //   );
 
-  //   return columnMetadata;
-  // }
 }

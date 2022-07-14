@@ -12,6 +12,10 @@ Content-Type: application/json
     "isAvailable": true
 }
 
-####
+#### get all products
 
 GET http://localhost:3000/product
+
+#### find one product by id
+
+GET http://localhost:3000/product/7

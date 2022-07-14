@@ -1,12 +1,18 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ProductService } from 'src/product/product.service';
+import { MetadataService } from './metadata.service';
 
 @Controller('metadata')
 export class MetadataController {
-  constructor(private productsService: ProductService) {}
+  constructor(private metadataService: MetadataService) {}
 
-  // @Get('/column')
-  // getColumn() {
-  //   return this.productsService.findNumberOfTables();
-  // }
+  @Get('/tables')
+  getTables(@Body('type') type: string) {
+    return this.metadataService.findAllTables(type);
+  }
+
+  @Get('/columns')
+  getColumns(@Body('type') type: string) {
+    return this.metadataService.findAllColumns(type);
+  }
 }
