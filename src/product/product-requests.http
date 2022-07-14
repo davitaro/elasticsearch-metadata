@@ -2,12 +2,16 @@ POST http://localhost:3000/product/create
 Content-Type: application/json
 
 {
-    "name": "king mattress",
-    "department": "furniture",
-    "category": "bedroom",
-    "brand": "PosturePedic",
-    "last_shipment_date": "2022-07-13T09:22:37.926Z",
-    "quantity_in_stock": 100,
-    "price": 550, 
+    "name": "blender",
+    "department": "kitchen",
+    "category": "electrics",
+    "brand": "Ninja",
+    "last_shipment_date": "2021-08-13T09:22:37.926Z",
+    "quantity_in_stock": 200,
+    "price": 75,
     "isAvailable": true
 }
+
+####
+
+GET http://localhost:3000/product

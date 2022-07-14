@@ -6,25 +6,10 @@ export type MetadataDocument = Metadata & Document;
 @Schema({ timestamps: true })
 export class Metadata {
   @Prop({ required: true })
-  total_number_employees: number;
+  number_of_tables: number; 
 
   @Prop({ required: true })
-  most_recent_hire: string;
-
-  @Prop({ required: true })
-  department_with_lowest_number_employees: string;
-
-  @Prop({ required: true })
-  department_with_highest_number_employees: string;
-
-  @Prop({ required: true })
-  highest_salary: number;
-
-  @Prop({ required: true })
-  lowest_salary: number;
-
-  @Prop({ required: true })
-  average_salary: number;
+  names_of_tables: number;
 
   created_date: string;
 }

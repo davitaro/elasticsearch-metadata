@@ -5,6 +5,7 @@ import {
   IsString,
   Min,
 } from 'class-validator';
+import { Default } from 'sequelize-typescript';
 
 export class CreateProductDto {
   @IsString()

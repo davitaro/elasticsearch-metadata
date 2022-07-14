@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { ProductController } from './product.controller';
 import { ProductService } from './product.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Product } from './product.entity';
+import { Product } from './product.model';
+import { SequelizeModule } from '@nestjs/sequelize';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Product])],
+  imports: [SequelizeModule.forFeature([Product])],
   controllers: [ProductController],
   providers: [ProductService],
-  exports: [TypeOrmModule],
+  exports: [SequelizeModule],
 })
 export class ProductModule {}
