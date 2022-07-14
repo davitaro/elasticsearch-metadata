@@ -15,4 +15,14 @@ export class MetadataController {
   getColumns(@Body('type') type: string) {
     return this.metadataService.findAllColumns(type);
   }
+
+  @Get('/dbname')
+  getDBName() {
+    return this.metadataService.findDBName();
+  }
+
+  @Get()
+  getAll(@Body('type') type: string) {
+    return this.metadataService.createMetadataObj(type);
+  }
 }

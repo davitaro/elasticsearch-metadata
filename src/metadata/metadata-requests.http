@@ -1,1 +1,34 @@
-GET http://localhost:3000/product/create
+GET http://localhost:3000/metadata/tables
+Content-Type: application/json
+
+{
+    "type": "productModel"
+}
+
+###
+GET http://localhost:3000/metadata/columns
+Content-Type: application/json
+
+{
+    "type": "productModel"
+}
+
+###
+
+full metadata: 
+{
+    "database name": , 
+    "total number of tables": 2,
+    "table data": ["table name", "schemaname", "tableowner", "description"],
+    "column data": [
+        {"table": "first table", "number of columns", "column names: ", "full column data"},
+         {"table": "second table"}
+        ]
+}
+
+###
+GET http://localhost:3000/metadata/dbname
+
+##### 
+
+GET http://localhost:3000/metadata

@@ -1,13 +1,30 @@
 import { Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/sequelize';
+import { InjectModel as InjectModelSQL } from '@nestjs/sequelize';
+import { InjectModel as InjectModelMongo } from '@nestjs/mongoose';
+
+import { Model } from 'mongoose';
 import { QueryTypes } from 'sequelize/types';
 import { Product } from 'src/product/product.model';
 import { ProductService } from 'src/product/product.service';
+import { DB } from './interfaces/db.interface';
 import { Table, TableObj } from './interfaces/tables.interface';
+import { Metadata, MetadataDocument } from './schemas/metadata.schema';
 
 @Injectable()
 export class MetadataService {
-  constructor(@InjectModel(Product) private productModel: typeof Product) {}
+  constructor(
+    @InjectModelSQL(Product) private productModel: typeof Product,
+    @InjectModelMongo(Metadata.name)
+    private metadataModel: Model<MetadataDocument>,
+  ) {}
+
+  async findDBName(): Promise<string> {
+    const DBName: any = await this.productModel.sequelize.query(
+      ` SELECT current_database();`,
+    );
+    const nameObj: DB = DBName[0][0];
+    return nameObj.current_database;
+  }
 
   async findAllTables(_type: string): Promise<TableObj> {
     const tableData = await this.productModel.sequelize.query(
@@ -72,5 +89,23 @@ export class MetadataService {
     }
 
     return columns;
+  }
+
+  async createMetadataObj(_type: string) {
+    const dbName = await this.findDBName();
+    const { total_number_tables } = await this.findAllTables(_type);
+    const table_names = await this.findAllTableNames(_type);
+    const column_data = await this.findAllColumns(_type);
+
+    const metadataObj = {
+      db_name: dbName,
+      total_number_tables,
+      table_names,
+      column_data,
+    };
+
+    const createdMetadata = new this.metadataModel(metadataObj);
+
+    return createdMetadata.save();
   }
 }
